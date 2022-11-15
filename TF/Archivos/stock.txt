@@ -1,0 +1,15 @@
+Codigo: G3542
+Nombre: Gaseosas medianas
+Cantidad: 43
+Codigo: F6371
+Nombre: Hamburguesa
+Cantidad: 15
+Codigo: X7603
+Nombre: Pollos
+Cantidad: 71
+Codigo: R7283
+Nombre: Papas Familiares
+Cantidad: 25
+Codigo: A3355
+Nombre: Ensaladas
+Cantidad: 23

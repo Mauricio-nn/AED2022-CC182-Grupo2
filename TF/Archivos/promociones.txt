@@ -1,0 +1,12 @@
+1 Pizza Hawaiana Mediana
+1 Gaseosa Mediana
+17,90
+3 Piezas de Pollo
+Papas Medianas
+15,90
+1 Hamburguesa Parrillera
+1 Gaseosa Mediana
+12,90
+2 Hamburguesas de Carne y Queso
+2 Gaseosas Medianas
+25,90

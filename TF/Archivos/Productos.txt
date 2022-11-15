@@ -1,0 +1,6 @@
+1;Pizza ;15;20
+2;Pollo Frito;35;30
+3;Hamburguesa;12;18
+4;Gaseosa 1;6.9;50
+5;Gaseosa 2;6.9;50
+6;Gaseosa 3;6.9;50
