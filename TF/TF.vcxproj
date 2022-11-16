@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="Controladora.h" />
     <ClInclude Include="FuncionesGenerales.h" />
+    <ClInclude Include="GeneradorDS.h" />
     <ClInclude Include="Librerias.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="ListaDE.h" />
