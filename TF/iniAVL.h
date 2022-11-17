@@ -31,7 +31,7 @@ public:
         leerLosDatos();
     }
     void leerLosDatos() {
-        lectura.open("gen_dataset.csv");
+        lectura.open("dataset.csv");
         string line;
         while (getline(lectura, line, '\n')) {
             stringstream s(line);

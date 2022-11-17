@@ -8,10 +8,10 @@ class GeneradorCSV {
 private:
 	string randNames[20] = {
 		"Mauricio",
-		"Elsa",
+		"Alejandra",
 		"Chamber",
 		"Alvaro",
-		"Alejandra",
+		"Sofia",
 		"Liliana",
 		"Camila",
 		"William",
@@ -30,25 +30,25 @@ private:
 	};
 	string randSur[20] = {
 		"Brimstone",
-		"Omen",
+		"Oliveira",
 		"Phoenix",
-		"Skye",
+		"Rodriguez",
 		"Arevalo",
 		"Quispe",
-		"Breach",
+		"Werner",
 		"Fukuda",
 		"Pato",
-		"Po",
+		"Palacios",
 		"Fu",
-		"Oliveira",
-		"Propeth",
-		"Huscar",
-		"Sniper",
+		"Garcia",
+		"Iglesias",
+		"Diaz",
+		"Torres",
 		"Smith",
-		"Razor",
-		"Fade",
+		"Lopez",
+		"Ruiz",
 		"Harbor",
-		"Cypher"
+		"Fernandez"
 	};
 public:
 	GeneradorCSV() {
@@ -57,10 +57,10 @@ public:
 	~GeneradorCSV() {}
 
 	void generarCSV(int n) {
-		cout << "Generando datos uwu ...\n";
+		cout << "Generando datos...\n";
 
 		ofstream file;
-		file.open("gen_dataset.csv");
+		file.open("dataset.csv");
 		if (file.is_open()) {
 			string data1;
 			float monto;
@@ -72,12 +72,13 @@ public:
 				monto = rand() % 80 + 20;
 
 				dni = rand() % 9999999 + 10000000;
-				file << data1 << "," << monto << "." << rand() % 10 << "," << dni << "," << "\n";
+				file << setw(20) << data1 << "," << setw(10) << monto << "." << rand() % 10 << "," << setw(15) << dni << "\n";
 			}
 		}
 
 		file.close();
-		cout << "Datos generados uwu ...\n";
+		cout << "Datos generados :D\n";
+		system("PAUSE");
 	}
 
 };

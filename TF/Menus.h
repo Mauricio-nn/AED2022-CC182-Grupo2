@@ -10,6 +10,7 @@
 
 void menu1()
 {
+	system("CLS");
 	cout << "Bienvenido a BAM Fast Food!\n\n";
 	cout << "Es cliente nuevo o antiguo?\n\n";
 	cout << "Marque 1 si desea iniciar sesion o marque 2 si desea registrarse :D\n\n";
@@ -84,11 +85,13 @@ void MenuPrincipal(v<T>* Controladora) {
 	case 6:
 		system("CLS");
 		CreateAVL newAvl1;
+		cout << " Nombre y Apellido - Monto del consumo - Documento de identidad" << endl;
 		newAvl1.mostrarAVL();
-		system("PAUSE");
+		cout << "\nPresione una tecla para regresar al menu principal";
+		_getch();
+		system("CLS");
+		MenuPrincipal(Controladora);
 		break;
-
-
 
 	}
 
