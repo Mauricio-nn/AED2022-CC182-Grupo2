@@ -1,56 +1,83 @@
-#pragma once
-#include"Librerias.h"
+#include"iostream"
+#include"fstream"
+#include"conio.h";
 
-const int ch_MAX = 52;
+using namespace std;
 
-class csvGen {
+class GeneradorCSV {
 private:
+	string randNames[20] = {
+		"Mauricio",
+		"Elsa",
+		"Chamber",
+		"Alvaro",
+		"Alejandra",
+		"Liliana",
+		"Camila",
+		"William",
+		"Ahri",
+		"Astra",
+		"Juan",
+		"Enzo",
+		"Miguel",
+		"Bryan",
+		"Silvana",
+		"Reyna",
+		"Diana",
+		"Briana",
+		"Sage",
+		"Yoru"
+	};
+	string randSur[20] = {
+		"Brimstone",
+		"Omen",
+		"Phoenix",
+		"Skye",
+		"Arevalo",
+		"Quispe",
+		"Breach",
+		"Fukuda",
+		"Pato",
+		"Po",
+		"Fu",
+		"Oliveira",
+		"Propeth",
+		"Huscar",
+		"Sniper",
+		"Smith",
+		"Razor",
+		"Fade",
+		"Harbor",
+		"Cypher"
+	};
 public:
-	csvGen() {}
-	~csvGen() {}
-	string RandomString(int ch) {
-		char alpha[ch_MAX] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g',
-							  'h', 'i', 'j', 'k', 'l', 'm', 'n',
-							  'o', 'p', 'q', 'r', 's', 't', 'u',
-							  'v', 'w', 'x', 'y', 'z',
-							  'A', 'B', 'C', 'D', 'E', 'F', 'G',
-							  'H', 'I', 'J', 'K', 'L', 'M','N',
-							  'O', 'P', 'Q', 'R', 'S', 'T', 'U',
-							  'V', 'W', 'X', 'Y', 'Z' };
-		string result = "";
-		for (int i = 0; i < ch; i++)
-			result = result + alpha[rand() % ch_MAX];
+	GeneradorCSV() {
 
-		return result;
 	}
-	void generate_dataset() {
-		int n = rand() % 1000000 + 200000;
-		//int n = 1000000;
-		int counter = 0;
-		cout << "Generating dataset . . .\nProgress: 0%";
+	~GeneradorCSV() {}
+
+	void generarCSV(int n) {
+		cout << "Generando datos uwu ...\n";
 
 		ofstream file;
-		file.open("Dependencies//generated_data_set.csv");
+		file.open("gen_dataset.csv");
 		if (file.is_open()) {
-			int data1;
-			string data2, data3, data4;
-			for (int i = 0; i < n; i++) {
-				data1 = rand() % 99999999 + 1;
-				data2 = RandomString(rand() % 10 + 3);
-				file << data2 << "," << data1 << "\n";
+			string data1;
+			float monto;
+			long dni;
+			float a = 2.0;
 
-				counter++;
-				if (counter > 8000) {
-					counter = 0;
-					system("CLS");
-					cout << "Generating dataset . . .\n";
-					cout << "Progress: " << int((100 * i) / n) << "%";
-				}
+			for (int i = 0; i < n; i++) {
+				data1 = randNames[rand() % 20] + " " + randSur[rand() % 20];
+				monto = rand() % 80 + 20;
+
+				dni = rand() % 9999999 + 10000000;
+				file << data1 << "," << monto << "." << rand() % 10 << "," << dni << "," << "\n";
 			}
 		}
-		file.close();
 
-		cout << "\nDataset generated\n\n";
+		file.close();
+		cout << "Datos generados uwu ...\n";
 	}
 
 };

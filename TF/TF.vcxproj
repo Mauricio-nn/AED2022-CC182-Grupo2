@@ -19,9 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AVL.h" />
     <ClInclude Include="Controladora.h" />
     <ClInclude Include="FuncionesGenerales.h" />
     <ClInclude Include="GeneradorDS.h" />
+    <ClInclude Include="iniAVL.h" />
     <ClInclude Include="Librerias.h" />
     <ClInclude Include="Lista.h" />
     <ClInclude Include="ListaDE.h" />
@@ -32,6 +34,7 @@
     <ClInclude Include="Pago.h" />
     <ClInclude Include="Pedido.h" />
     <ClInclude Include="Producto.h" />
+    <ClInclude Include="Transacciones.h" />
     <ClInclude Include="Usuario.h" />
   </ItemGroup>
   <ItemGroup>

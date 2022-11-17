@@ -6,10 +6,12 @@
 #include"ListaDE.h"
 #include"Usuario.h"
 
+
 template<class v>
 class Controladora
 {
 private:
+	//CreateAVL* avl1;
 	Lista<v>* clientes;
 	ListaDE<v>* promociones;
 	ListaDE<v>* stock;
@@ -17,6 +19,7 @@ private:
 
 public:
 	Controladora() {
+	/*	avl1 = new CreateAVL();*/
 		clientes = new Lista<v>();
 		promociones = new ListaDE<v>();
 		stock = new ListaDE<v>();
@@ -47,6 +50,11 @@ public:
 		}
 
 	}
+
+	//CreateAVL getAVL() {
+
+	//	return avl1;
+	//}
 
 	template<template<class> class v, class T>
 	void agregarNodoDE(v<T>* datas, string filename) {

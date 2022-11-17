@@ -2,6 +2,11 @@
 #include "Librerias.h"
 #include "Producto.h"
 #include "Pedido.h"
+#include "Controladora.h"
+#include "iniAVL.h"
+
+
+
 
 void menu1()
 {
@@ -26,7 +31,8 @@ void MenuPrincipal(v<T>* Controladora) {
 	cout << "    2. Ver nuestra carta.\n";
 	cout << "    3. Hacer pedido online.\n";
 	cout << "    4. Ver nuestro stock de productos.\n";
-	cout << "    5. Salir de la aplicacion.\n\n";
+	cout << "    5. Salir de la aplicacion.\n";
+	cout << "    6. AVL.\n\n";
 	cout << "    Seleccione la opcion que desee:"; cin >> opcion;
 
 	
@@ -74,6 +80,14 @@ void MenuPrincipal(v<T>* Controladora) {
 		cout << "\n\n   Gracias por utilizar nuestra aplicacion!\n\n ";
 		system("PAUSE");
 		break;
+
+	case 6:
+		system("CLS");
+		CreateAVL newAvl1;
+		newAvl1.mostrarAVL();
+		system("PAUSE");
+		break;
+
 
 
 	}

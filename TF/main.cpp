@@ -1,8 +1,14 @@
 #include"Controladora.h"
 #include"Lista.h"
 #include "Menus.h"
+#include "GeneradorDS.h"
+
+
 int main()
 {
+	GeneradorCSV generar;
+	generar.generarCSV(10000);
+
 	int a;
 	
 	Controladora<string>* controladora = new Controladora<string>();
