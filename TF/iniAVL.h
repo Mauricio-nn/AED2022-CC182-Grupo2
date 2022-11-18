@@ -6,25 +6,25 @@
 class CreateAVL {
     ifstream lectura;
     ofstream escritura;
-    AVLTree<Prueba>* arbolbalanced;
-    vector<Prueba> datos;
+    AVLTree<Transacciones>* arbolbalanced;
+    vector<Transacciones> datos;
 private:
     void guardarEnAVL() {
-        for (Prueba& r : datos)
+        for (Transacciones& r : datos)
             this->arbolbalanced->insert(r);
     }
-    void swap(Prueba& a, Prueba& b) {
-        Prueba c = a;
+    void swap(Transacciones& a, Transacciones& b) {
+        Transacciones c = a;
         a = b;
         b = c;
     }
 public:
     CreateAVL() {
-        arbolbalanced = new AVLTree<Prueba>(
-            [](Prueba value) -> void {
+        arbolbalanced = new AVLTree<Transacciones>(
+            [](Transacciones value) -> void {
                 cout << value << "\n";
             },
-            [](Prueba  a, Prueba  b) -> bool {
+            [](Transacciones  a, Transacciones  b) -> bool {
                 return a.getcuenta() < b.getcuenta();
             }
             );
@@ -39,13 +39,13 @@ public:
             string nombreapellido;
             float consumo;
             long dni;
-            getline(s, aux, ',');
+            getline(s, aux, ';');
             nombreapellido = aux;
-            getline(s, aux, ',');
+            getline(s, aux, ';');
             consumo = atof(aux.c_str());
-            getline(s, aux, ',');
+            getline(s, aux, ';');
             dni = atof(aux.c_str());
-            Prueba r(nombreapellido, consumo, dni);
+            Transacciones r(nombreapellido, consumo, dni);
 
             datos.push_back(r);
 

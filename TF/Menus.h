@@ -32,8 +32,8 @@ void MenuPrincipal(v<T>* Controladora) {
 	cout << "    2. Ver nuestra carta.\n";
 	cout << "    3. Hacer pedido online.\n";
 	cout << "    4. Ver nuestro stock de productos.\n";
-	cout << "    5. Salir de la aplicacion.\n";
-	cout << "    6. AVL.\n\n";
+	cout << "    5. Mostrar datos de los clientes atendidos.\n";
+	cout << "    6. Salir de la aplicacion.\n\n";
 	cout << "    Seleccione la opcion que desee:"; cin >> opcion;
 
 	
@@ -78,19 +78,25 @@ void MenuPrincipal(v<T>* Controladora) {
 
 	case 5:
 		system("CLS");
-		cout << "\n\n   Gracias por utilizar nuestra aplicacion!\n\n ";
-		system("PAUSE");
-		break;
-
-	case 6:
-		system("CLS");
-		CreateAVL newAvl1;
+		
 		cout << " Nombre y Apellido - Monto del consumo - Documento de identidad" << endl;
-		newAvl1.mostrarAVL();
+		
+		{
+			CreateAVL newAvl1;
+			newAvl1.mostrarAVL();
+		}
+		
 		cout << "\nPresione una tecla para regresar al menu principal";
 		_getch();
 		system("CLS");
 		MenuPrincipal(Controladora);
+		break;
+		
+
+	case 6:
+		system("CLS");
+		cout << "\n\n   Gracias por utilizar nuestra aplicacion!\n\n ";
+		system("PAUSE");
 		break;
 
 	}

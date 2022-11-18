@@ -43,7 +43,7 @@ private:
 		"Garcia",
 		"Iglesias",
 		"Diaz",
-		"Torres",
+		"Torre",
 		"Smith",
 		"Lopez",
 		"Ruiz",
@@ -57,7 +57,7 @@ public:
 	~GeneradorCSV() {}
 
 	void generarCSV(int n) {
-		cout << "Generando datos...\n";
+		cout << " Cargando datos...\n";
 
 		ofstream file;
 		file.open("dataset.csv");
@@ -71,13 +71,13 @@ public:
 				data1 = randNames[rand() % 20] + " " + randSur[rand() % 20];
 				monto = rand() % 80 + 20;
 
-				dni = rand() % 9999999 + 10000000;
-				file << setw(20) << data1 << "," << setw(10) << monto << "." << rand() % 10 << "," << setw(15) << dni << "\n";
+				dni = (rand() % 89999999) + 10000000;
+				file << setw(20) << data1 << ";" << setw(18) << monto << "." << rand() % 10 << ";" << setw(22) << dni << "\n";
 			}
 		}
 
 		file.close();
-		cout << "Datos generados :D\n";
+		cout << " Datos cargados con exito! :D\n";
 		system("PAUSE");
 	}
 

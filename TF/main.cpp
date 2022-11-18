@@ -7,7 +7,7 @@
 int main()
 {
 	GeneradorCSV generar;
-	generar.generarCSV(10000);
+	generar.generarCSV(100);
 
 	int a;
 	
