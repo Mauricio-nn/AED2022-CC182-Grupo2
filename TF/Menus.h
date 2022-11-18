@@ -33,7 +33,9 @@ void MenuPrincipal(v<T>* Controladora) {
 	cout << "    3. Hacer pedido online.\n";
 	cout << "    4. Ver nuestro stock de productos.\n";
 	cout << "    5. Mostrar datos de los clientes atendidos.\n";
-	cout << "    6. Salir de la aplicacion.\n\n";
+	cout << "    6. Mostrar Credenciales de los Empleados.\n";
+	cout << "    7. Buscar password de empleado segun su nombre.\n";
+	cout << "    8. Salir de la aplicacion.\n\n";
 	cout << "    Seleccione la opcion que desee:"; cin >> opcion;
 
 	
@@ -92,15 +94,37 @@ void MenuPrincipal(v<T>* Controladora) {
 		MenuPrincipal(Controladora);
 		break;
 		
-
 	case 6:
+		system("CLS");
+		Controladora->getHT()->mostrarHT();
+
+		system("PAUSE");
+		system("CLS");
+		MenuPrincipal(Controladora);
+		break;
+
+	case 7:
+		system("CLS");
+
+		{
+			string emp_name;
+			cout << "Ingresa tu nombre de Usuario: " << endl;
+			cin >> emp_name;
+			Controladora->getHT()->SearchPassword(emp_name);
+		}
+
+		system("PAUSE");
+		system("CLS");
+		MenuPrincipal(Controladora);
+		break;
+
+	case 8:
 		system("CLS");
 		cout << "\n\n   Gracias por utilizar nuestra aplicacion!\n\n ";
 		system("PAUSE");
 		break;
 
 	}
-
 }
 
 template<template<class> class v, class T>

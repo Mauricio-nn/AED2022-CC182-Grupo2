@@ -6,8 +6,10 @@
 
 int main()
 {
+	srand(time(NULL));
+
 	GeneradorCSV generar;
-	generar.generarCSV(100);
+	generar.generarCSV(5);
 
 	int a;
 	

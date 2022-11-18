@@ -5,7 +5,7 @@
 #include"NodoDE.h"
 #include"ListaDE.h"
 #include"Usuario.h"
-
+#include"HashTable.h"
 
 template<class v>
 class Controladora
@@ -16,6 +16,8 @@ private:
 	ListaDE<v>* promociones;
 	ListaDE<v>* stock;
 	vector<Usuario<v>*>* usuarios;
+	HashTable<CEmp_users<v>>* HT;
+	
 
 public:
 	Controladora() {
@@ -24,6 +26,7 @@ public:
 		promociones = new ListaDE<v>();
 		stock = new ListaDE<v>();
 		usuarios = new vector<Usuario<v>*>();
+		HT = new HashTable<CEmp_users<v>>(11);
 
 	}
 	~Controladora() {};
@@ -75,6 +78,27 @@ public:
 
 	}
 
+	void ReadCSV() {
+		ifstream lectura;
+		lectura.open("dataset2.csv");
+		string line;
+		while (getline(lectura, line, '\n')) {
+			stringstream s(line);
+			string aux;
+			string dato1, dato2;
+			getline(s, aux, ',');
+			dato1 = aux;
+			getline(s, aux, ',');
+			dato2 = aux;
+
+			HT->insert(dato1, new CEmp_users<v>(dato1, dato2));
+
+		}
+
+	}
+
+
+
 	void Agregar_Datos() {
 		agregarNodo(clientes, "Archivos//usuarios.txt");
 		agregarNodoDE(promociones, "Archivos//promociones.txt");
@@ -83,6 +107,7 @@ public:
 		string data1, data2, data3, data4 = ""; ifstream getdata;
 		getdata.open("Archivos//usuarios.txt", ios::in);
 
+		ReadCSV();
 
 		if (getdata.is_open()) {
 			while (!getdata.eof()) {
@@ -106,6 +131,7 @@ public:
 	Lista<string>* getUsuarios() { return clientes; }
 	ListaDE<string>* getPromociones() { return  promociones; }
 	ListaDE<string>* getStock() { return  stock; }
+	HashTable<CEmp_users<v>>* getHT() { return HT; }
 
 	void insertUser(v usuario, v contrasena) {
 		usuarios->push_back(new Usuario<v>(usuario, contrasena));

@@ -21,8 +21,10 @@
   <ItemGroup>
     <ClInclude Include="AVL.h" />
     <ClInclude Include="Controladora.h" />
+    <ClInclude Include="Emp_Users.h" />
     <ClInclude Include="FuncionesGenerales.h" />
     <ClInclude Include="GeneradorDS.h" />
+    <ClInclude Include="HashTable.h" />
     <ClInclude Include="iniAVL.h" />
     <ClInclude Include="Librerias.h" />
     <ClInclude Include="Lista.h" />

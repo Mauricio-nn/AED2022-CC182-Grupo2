@@ -4,12 +4,12 @@
 using namespace std;
 class Transacciones {
     string nombreapellido;
-    float consumo;
+    double consumo;
     long dni;
 
 
 public:
-    Transacciones(string nombreapellido, float consumo, long dni)
+    Transacciones(string nombreapellido, double consumo, long dni)
         :nombreapellido(nombreapellido), consumo(consumo), dni(dni) {}
     double getcuenta() {
         return this->consumo;

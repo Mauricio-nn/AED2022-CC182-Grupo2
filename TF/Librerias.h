@@ -13,7 +13,7 @@
 #include <sstream>
 #include <list>
 #include <sstream>
-#include <functional>
+
 #include <stack>
 
 using namespace std;

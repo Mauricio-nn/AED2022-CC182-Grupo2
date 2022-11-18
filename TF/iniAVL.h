@@ -37,13 +37,13 @@ public:
             stringstream s(line);
             string aux;
             string nombreapellido;
-            float consumo;
+            double consumo;
             long dni;
-            getline(s, aux, ';');
+            getline(s, aux, ',');
             nombreapellido = aux;
-            getline(s, aux, ';');
+            getline(s, aux, ',');
             consumo = atof(aux.c_str());
-            getline(s, aux, ';');
+            getline(s, aux, ',');
             dni = atof(aux.c_str());
             Transacciones r(nombreapellido, consumo, dni);
 
